@@ -8,8 +8,8 @@ os:
   - osx
 
 before_install:
-  - if [[ $TRAVIS_OS_NAME == windows ]]; then
-      echo $PATH;
-    fi
+  - echo $PATH;
+  - which python;
+  - python --version;
 
 script: node -p 'require.resolve("weak");'
