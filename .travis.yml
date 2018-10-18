@@ -11,3 +11,5 @@ before_install:
   - if [[ $TRAVIS_OS_NAME == windows ]]; then
       echo $PATH
     fi
+
+script: node -p 'require.resolve("weak");'
