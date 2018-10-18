@@ -8,6 +8,9 @@ os:
   - osx
 
 before_install:
+  - if [[ $TRAVIS_OS_NAME == windows ]]; then
+      choco install python;
+    fi
   - echo $PATH;
   - which python;
   - python --version;
