@@ -9,7 +9,12 @@ os:
 
 before_install:
   - if [[ $TRAVIS_OS_NAME == windows ]]; then
-      choco install python;
+    set DEBUG_HELPER=1;
+    ./find_python.cmd;
+    echo $VCBUILD_PYTHON_LOCATION;
+    choco install python;
+    ./find_python.cmd;
+    echo $VCBUILD_PYTHON_LOCATION;
     fi
   - echo $PATH;
   - which python;
