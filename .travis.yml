@@ -17,7 +17,7 @@ before_install:
     echo $VCBUILD_PYTHON_LOCATION;
     fi
   - echo $PATH;
-  - which python;
-  - python --version;
+  - which python2;
+  - python2 --version;
 
 script: node -p 'require.resolve("weak");'
