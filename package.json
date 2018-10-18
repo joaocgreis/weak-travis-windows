@@ -1,0 +1,9 @@
+{
+  "name": "weak-travis-windows",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "weak": "^1.0.1"
+  }
+}
