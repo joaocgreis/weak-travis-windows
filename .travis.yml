@@ -9,12 +9,8 @@ os:
 
 before_install:
   - if [[ $TRAVIS_OS_NAME == windows ]]; then
-    set DEBUG_HELPER=1;
-    ./find_python.cmd;
-    echo $VCBUILD_PYTHON_LOCATION;
     choco install python2;
-    ./find_python.cmd;
-    echo $VCBUILD_PYTHON_LOCATION;
+    export PATH="/c/Python27:/c/Python27/Scripts:$PATH";
     fi
   - echo $PATH;
   - which python2;
