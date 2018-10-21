@@ -13,7 +13,7 @@ before_install:
     export PATH="/c/Python27:/c/Python27/Scripts:$PATH";
     fi
   - echo $PATH;
-  - which python2;
-  - python2 --version;
+  - which python;
+  - python --version;
 
 script: node -p 'require.resolve("weak");'
