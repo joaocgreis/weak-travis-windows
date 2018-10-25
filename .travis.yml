@@ -8,7 +8,6 @@ os:
   - osx
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then ls /c/Python27/ /c/Program*; fi
-  - /c/Python27/python.exe -V || true
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then find /c/ -iname \*python\*; fi
 
 script: node -p 'require.resolve("weak");'
