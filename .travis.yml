@@ -8,12 +8,7 @@ os:
   - osx
 
 before_install:
-  - if [[ $TRAVIS_OS_NAME == windows ]]; then
-    choco install python2;
-    export PATH="/c/Python27:/c/Python27/Scripts:$PATH";
-    fi
-  - echo $PATH;
-  - which python;
-  - python --version;
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then ls /c/Python27/ /c/Program*; fi
+  - /c/Python27/python.exe -V || true
 
 script: node -p 'require.resolve("weak");'
