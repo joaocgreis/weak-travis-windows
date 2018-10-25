@@ -4,10 +4,8 @@ node_js: 10
 
 os:
   - windows
-  - linux
-  - osx
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then find /c/ -iname \*python\*; fi
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then clist -l; fi
 
 script: node -p 'require.resolve("weak");'
