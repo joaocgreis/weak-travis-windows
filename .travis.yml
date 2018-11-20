@@ -1,3 +1,6 @@
+os:
+  - linux
+  - windows
 addons:
   apt:
     sources:
