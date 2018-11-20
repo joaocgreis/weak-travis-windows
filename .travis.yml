@@ -4,8 +4,9 @@ env:
   - LINUX_CXX=g++-4.8
 
 os:
-  - linux
-  - osx
+  #- linux
+  #- osx
+  - windows
 
 node_js:
   - "6"
@@ -27,6 +28,7 @@ before_install:
   - echo Building for Node $TRAVIS_NODE_VERSION
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX=$LINUX_CXX; $CXX --version; fi;
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then c++ --version; fi;
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then export NPM_CONFIG_PREFIX=c:\\npm_prefix PATH="/c/npm_prefix:$PATH"; fi
   - npm install -g npm@latest
 
 install: true
