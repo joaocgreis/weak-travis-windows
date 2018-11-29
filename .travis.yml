@@ -4,14 +4,3 @@ node_js: 10
 
 os:
   - windows
-  - linux
-  - osx
-
-env:
-  global:
-    - YARN_GPG=no
-
-before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then cinst -y python2; fi
-
-script: node -p 'require.resolve("weak");'
