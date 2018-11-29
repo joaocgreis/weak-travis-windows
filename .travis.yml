@@ -1,18 +1,17 @@
 language: node_js
 
-node_js: 8
+node_js: 10
 
 os:
   - windows
+  - linux
+  - osx
 
-script:
-#  - icacls c:\\ProgramData\\nvs
-#  - icacls C:\\ProgramData\\nvs\\node\\10.14.0\\x64
-#  - icacls C:\\ProgramData\\nvs\\node\\10.14.0\\x64\\npm
-#  - c:\\windows\\system32\\whoami.exe
-#  - node `npm prefix -g`/node_modules/npm/bin/npm-cli.js i -g npm@6.4.0
-#  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then export NPM_CONFIG_PREFIX=c:\\npm_prefix PATH="/c/npm_prefix:$PATH"; fi
-#  - npm i -g npm@6.4.0
-#  - npm i -g npm@latest
-#  - npm test
-  - npm i weak
+#env:
+#  global:
+#    - YARN_GPG=no
+
+#before_install:
+#  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then cinst -y python2; fi
+
+script: node -p 'require.resolve("weak");'
