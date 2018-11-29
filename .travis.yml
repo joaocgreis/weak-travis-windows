@@ -5,9 +5,10 @@ node_js: 10
 os:
   - windows
 
-before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then clist -l; fi
-
 script:
+  - clist -l
   - which -a python
-  - npm i --verbose iconv
+  - which -a python2
+  - find /c/ -iname python.exe
+  - find /c/ -iname python2.exe
+  - npm i --verbose weak
